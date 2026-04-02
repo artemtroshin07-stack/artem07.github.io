@@ -1,12 +1,12 @@
 new Vue({
     el: '#app',
     data: {
-        products: [
+       products: [
             { 
                 id: 1, 
                 title: "Cavendish Banana", 
                 short_text: "Classic & sweet", 
-                image: "img/t-all/1.png", 
+                image: "img/t-all/1.jpg", 
                 desc: "The most popular yellow banana, perfect for a quick snack.", 
                 characteristics: { 
                     resistance: ["High resistance to Panama disease (Race 1)", "Tolerant to Yellow Sigatoka"], 
@@ -20,7 +20,7 @@ new Vue({
                 id: 2, 
                 title: "Red Banana", 
                 short_text: "Sweet & berry-like", 
-                image: "img/t-all/12.png", 
+                image: "img/t-all/12345.jpg", 
                 desc: "A sweet banana with a slight hint of raspberry flavor.", 
                 characteristics: { 
                     resistance: ["Moderate resistance to common pests."], 
@@ -34,7 +34,7 @@ new Vue({
                 id: 3, 
                 title: "Plantain", 
                 short_text: "Starchy, for cooking", 
-                image: "img/t-all/123.png", 
+                image: "img/t-all/1234.jpg", 
                 desc: "A starchy banana best enjoyed fried, boiled, or baked.", 
                 characteristics: { 
                     resistance: ["High resistance to Black Weevil.", "Tolerant to drought."], 
@@ -48,7 +48,7 @@ new Vue({
                 id: 4, 
                 title: "Baby Banana", 
                 short_text: "Extra sweet", 
-                image: "img/t-all/1234.png", 
+                image: "img/t-all/12.jpg", 
                 desc: "Bite-sized bananas with a dense, exceptionally sweet flavor.", 
                 characteristics: { 
                     resistance: ["Susceptible to standard fungal diseases.", "Needs warm climate."], 
@@ -62,7 +62,7 @@ new Vue({
                 id: 5, 
                 title: "Blue Java Banana", 
                 short_text: "Vanilla flavor", 
-                image: "img/t-all/12345.png", 
+                image: "img/t-all/123.jpg", 
                 desc: "Often called the 'Ice Cream Banana' for its rich vanilla taste.", 
                 characteristics: { 
                     resistance: ["Cold tolerant compared to other varieties.", "Wind resistant."], 

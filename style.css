@@ -424,13 +424,13 @@ footer ul {
 
 /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**/
 
-/*tomato all*/
+/*tomato all / теперь бананы*/
 
 .tomato-all {
-    background: url(img/t-all/bg.png);
+    background: url(img/t-all/bg.jpg);
     height: 602px;
-    background-size: auto;
-    background-position: 0 -540px;
+    background-size: cover; /* Заставит картинку растянуться на весь блок */
+    background-position: center; /* Поставит картинку ровно по центру */
     background-repeat: no-repeat;
 }
 
@@ -490,7 +490,7 @@ header label {
 
 .content-t-al {
     padding: 66px 0 50px 0;
-    background: #faeeee;
+    background: #FFFCE0; /* Нежный светло-желтый (банановый крем) */
 }
 
 /*tomato-hybrids*/
@@ -546,7 +546,7 @@ header label {
 .tomato-hybrids .description .line {
     width: 4px;
     height: 40px;
-    background-color: #e35252;
+    background-color: #E5C100; /* Заменил красный на банановый желтый */
     margin-right: 20px;
     border-radius: 4px;
 }
@@ -563,8 +563,8 @@ header label {
 }
 
 .breeding-card {
-    opacity: 0;
-    transform: translateY(50%);
+    opacity: 1; /* Было 0, делаем 1, чтобы текст был виден всегда */
+    transform: none; /* Убираем смещение вниз */
 }
 
 .breeding-card.visible {
@@ -574,10 +574,12 @@ header label {
 
 .breeding-info .container {
     display: flex;
-    background: #FFFAFA;
+    background: #FFFFFF; /* Делаем фон этого блока чисто белым, чтобы он красиво контрастировал с желтым фоном страницы */
     padding: 58px 22px 58px 22px;
     gap: 33px;
     margin-bottom: 40px;
+    border-radius: 10px; /* Можно добавить небольшое скругление углов для красоты */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* И легкую тень, чтобы блок "парил" над желтым фоном */
 }
 
 .breeding-info .container .breeding-card {
@@ -639,7 +641,7 @@ header label {
 .variety-catalog .description .line {
     width: 3px;
     height: 40px;
-    background-color: #e35252;
+    background-color: #E5C100; /* Заменил красный на банановый желтый */
     margin-right: 20px;
     border-radius: 4px;
 }
@@ -735,7 +737,7 @@ header label {
 .content-t-one .info .wrap {
     display: flex;
     align-items: center;
-    color: #cf2333;
+    color: #E5C100; /* Заменил красный на банановый желтый */
     font-size: 34px;
     font-weight: 700;
     gap: 31px;
@@ -887,7 +889,7 @@ tr{
 tbody button {
     text-align: center;
     font-size: 30px;
-    color: #EB5757;
+    color: #E5C100; /* Заменил красный на желтый в кнопках удаления */
     background: none;
     border: none;
 }

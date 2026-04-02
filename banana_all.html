@@ -17,14 +17,13 @@
     <link rel="stylesheet" href="main.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="js/main.js" defer></script>
-    <title>Contact us</title>
+    <title>Banana</title>
 </head>
 
 <body>
     <div class="nav-phone">
         <div class="menu">
             <div class="close-btn">
-
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                     <path
                         d="M18.36 5.64a1 1 0 0 0-1.41 0L12 9.59 7.05 4.64a1 1 0 0 0-1.41 1.41L10.59 12l-4.95 4.95a1 1 0 0 0 1.41 1.41L12 14.41l4.95 4.95a1 1 0 0 0 1.41-1.41L13.41 12l4.95-4.95a1 1 0 0 0 0-1.41z" />
@@ -38,7 +37,7 @@
             </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="banana_all.html">Company Profile</a></li>
+                <li><a href="">Company Profile</a></li>
                 <li><a href="banana_all.html">Products</a></li>
                 <li><a href="">Services</a></li>
                 <li><a href="">R & D</a></li>
@@ -46,7 +45,7 @@
             </ul>
         </div>
     </div>
-    <header class="contact">
+    <header class="tomato-all">
         <div class="vrap">
             <div class="nav-t-al">
                 <div class="wrap-nav">
@@ -68,7 +67,7 @@
                     </div>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="banana_all.html">Company Profile</a></li>
+                        <li><a href="">Company Profile</a></li>
                         <li><a href="banana_all.html">Products</a></li>
                         <li><a href="">Services</a></li>
                         <li><a href="">R & D</a></li>
@@ -78,115 +77,77 @@
             </div>
         </div>
     </header>
-    <main>
-        <div class="content-con">
-
-            <div class="container" id="app">
-
-                <div class="contact-for">
-
-                    <h1>Contact us</h1>
-                    <p class="highlight">*****</p>
-                    <!-- Корзина -->
-
-
-                    <div v-if="!orderPlaced">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Cart</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="item in cart" :key="item.id">
-                                    <td><img :src="item.image" width="50"></td>
-                                    <td>{{ item.title }} |</td>
-                                    <td>{{ item.short_text }}</td>
-                                    <td>
-                                        <button @click="removeFromCart(item.id)">✗</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="cart" v-if="Object.keys(cart).length === 0">
-                            <p>Your cart is empty.</p>
-                        </div>
+    
+    <main id="app">
+        <div class="content-t-al">
+            <div class="tomato-hybrids">
+                <h2>Agridera Fresh Market <br>Banana Varieties</h2>
+                <p class="highlight">*****</p>
+                <div class="text">
+                    <p> Agridera aims to be one of the world's leading companies in the breeding, production, and
+                        marketing of banana plants. <span>We invest intensively in research and development to provide solutions to
+                            growers and consumers in numerous tropical and subtropical countries around the world.</span>
+                        <br>In particular, we breed improved disease-resistant cultivars adapted to different climates and markets globally.
+                    </p>
+                    <p> Currently, emphasis is placed on combining resistance to Panama Disease (Fusarium wilt TR4) and 
+                        Black Sigatoka with other soil-borne challenges into superior banana breeding lines. 
+                        Moreover, comprehensive efforts are being undertaken to develop varieties resistant to Banana Bunchy Top Virus (BBTV). </p>
+                    <p>In terms of horticultural traits, breeding is for yield, different bunch sizes, cold tolerance, 
+                        flavor, post-harvest longevity, and wind resistance. Combinations
+                        of quality features and disease resistance are sought in a variety of types, namely sweet dessert bananas and starchy plantains. </p>
+                </div>
+                <div class="description">
+                    <div class="line"></div>
+                    <p>Agridera Banana breeding programs are focusing on three main segments: Commercial Cavendish, Cooking Bananas (Plantains), and Specialty Bananas.</p>
+                </div>
+            </div>
+            <div class="breeding-info">
+                <div class="container">
+                    <div class="breeding-card">
+                        <h3>Commercial Cavendish Program</h3>
+                        <p><span>This breeding is aimed for the global export markets.</span> The main focus is on high yield, 
+                            uniform bunch shape, and robust resistance to Panama disease (Race 1 and TR4). 
+                            These hybrids are developed to ensure long shelf life and perfect bright yellow color upon ripening.</p>
                     </div>
-
-                    <form class="contact-form" @submit.prevent="makeOrder" v-if="!orderPlaced">
-                        <div class="column">
-                            <p>Name *</p>
-                            <label><input type="text" v-model="contactFields.name" required></label>
-
-                            <p>Company Name</p>
-                            <label><input type="text"></label>
-
-                            <p>Position</p>
-                            <label><input type="text"></label>
-
-                            <p>City</p>
-                            <label><input type="text"></label>
-
-                            <p>Country</p>
-                            <label><input type="text"></label>
-
-                            <p>Telephone</p>
-                            <label><input type="tel"></label>
-
-                            <p>Email *</p>
-                            <label><input type="email" v-model="contactFields.email" required></label>
-                        </div>
-
-                        <div class="column">
-                            <p>You are a</p>
-                            <label>
-                                <select>
-                                    <option>seed producer</option>
-                                    <option>farmer</option>
-                                    <option>distributor</option>
-                                    <option>other</option>
-                                </select>
-                            </label>
-
-                            <p>If other, please specify</p>
-                            <label><input class="other-input" type="text"></label>
-
-                            <p>You are interested in</p>
-                            <label><textarea v-model="contactFields.message"></textarea></label>
-
-                            <p>Please type this code</p>
-                            <div class="wrap-captcha">
-                                <img src="img/contact/captcha.png" alt="captcha">
-                                <label>
-                                    <input type="text" class="small-input" required>
-                                </label>
-                                <div class="" v-if="Object.keys(cart).length > 0 && !orderPlaced">
-                                    <button type="submit" class="button" @click="submitForm">Send Message</button>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </form>
-                    <div class="order-placed" v-if="orderPlaced">
-                        <h2>Thanks for your order!</h2>
-                        <p>Name: {{ contactFields.name }}</p>
-                        <p>Email: {{ contactFields.email }}</p>
-                        <p>Message: {{ contactFields.message }}</p>
+                    <div class="breeding-card">
+                        <h3>Cooking Bananas & Plantains</h3>
+                        <p><span>This breeding is for African, Latin American, and Caribbean markets.</span> 
+                            We focus on large, starchy fruits suited for frying, boiling, or baking. Emphasis is placed on 
+                            drought tolerance, vigorous growth, and high resistance to Black Weevil and nematodes.</p>
+                    </div>
+                    <div class="breeding-card">
+                        <h3>Specialty & Cold Tolerant <br>Bananas</h3>
+                        <p><span>This breeding is for niche markets and subtropical climates.</span> We breed unique flavor profiles, 
+                            such as vanilla or berry notes, and distinct skin colors (red, blue/silver). 
+                            We combine robust root systems with cold and wind tolerance to allow cultivation outside traditional tropical zones.</p>
                     </div>
                 </div>
             </div>
-            <div class="our-address">
-                <h1>Our Address</h1>
-                <div class="text">
-                    <p>AGRIDERA Seeds & Agriculture Ltd.</p>
-                    <p>P.O Box 103,</p>
-                    <p>Gedera 70750, Israel.</p>
-                    <p>Telephone: <span>+972 8 944 9222</span></p>
+            
+            <div class="variety-catalog">
+                <div class="description">
+                    <div class="line"></div>
+                    <p>Agridera operates through international and local distributers around the world. </p>
                 </div>
+                
+                <div class="container">
+                    <a v-for="p in products" :key="p.id" :href="'banana_one.html#' + p.id">
+                        <div class="tomato-card">
+                            <div class="container">
+                                <img :src="p.image" :alt="p.title">
+                            </div>
+                            <div class="text">
+                                <h3>{{ p.title }}</h3>
+                                <p>{{ p.short_text }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
             </div>
         </div>
     </main>
+    
     <footer>
         <div class="nav">
             <div class="menu">
@@ -213,7 +174,20 @@
     <div class="copy">
         <p>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</p>
     </div>
+
     <script>
+        const breeding = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.breeding-card').forEach(block => {
+            breeding.observe(block);
+        });
+        
         document.addEventListener("DOMContentLoaded", function () {
             const menuBtn = document.querySelector("header .menu-btn");
             const menu = document.querySelector(".nav-phone");

@@ -17,14 +17,13 @@
     <link rel="stylesheet" href="main.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="js/main.js" defer></script>
-    <title>Contact us</title>
+    <title>Banana Variety</title>
 </head>
 
 <body>
     <div class="nav-phone">
         <div class="menu">
             <div class="close-btn">
-
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                     <path
                         d="M18.36 5.64a1 1 0 0 0-1.41 0L12 9.59 7.05 4.64a1 1 0 0 0-1.41 1.41L10.59 12l-4.95 4.95a1 1 0 0 0 1.41 1.41L12 14.41l4.95 4.95a1 1 0 0 0 1.41-1.41L13.41 12l4.95-4.95a1 1 0 0 0 0-1.41z" />
@@ -38,7 +37,7 @@
             </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="banana_all.html">Company Profile</a></li>
+                <li><a href="">Company Profile</a></li>
                 <li><a href="banana_all.html">Products</a></li>
                 <li><a href="">Services</a></li>
                 <li><a href="">R & D</a></li>
@@ -46,7 +45,7 @@
             </ul>
         </div>
     </div>
-    <header class="contact">
+    <header class="tomato-one">
         <div class="vrap">
             <div class="nav-t-al">
                 <div class="wrap-nav">
@@ -68,7 +67,7 @@
                     </div>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="banana_all.html">Company Profile</a></li>
+                        <li><a href="">Company Profile</a></li>
                         <li><a href="banana_all.html">Products</a></li>
                         <li><a href="">Services</a></li>
                         <li><a href="">R & D</a></li>
@@ -78,115 +77,82 @@
             </div>
         </div>
     </header>
-    <main>
-        <div class="content-con">
+    
+    <main id="app">
+        <div class="content-t-one">
 
-            <div class="container" id="app">
-
-                <div class="contact-for">
-
-                    <h1>Contact us</h1>
-                    <p class="highlight">*****</p>
-                    <!-- Корзина -->
-
-
-                    <div v-if="!orderPlaced">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Cart</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="item in cart" :key="item.id">
-                                    <td><img :src="item.image" width="50"></td>
-                                    <td>{{ item.title }} |</td>
-                                    <td>{{ item.short_text }}</td>
-                                    <td>
-                                        <button @click="removeFromCart(item.id)">✗</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="cart" v-if="Object.keys(cart).length === 0">
-                            <p>Your cart is empty.</p>
+            <div class="container">
+                <div class="wrap-a">
+                    <a href="banana_all.html" class="return">⟵ Return to all bananas</a>
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <h1>{{ product.title }} <br><span>{{ product.short_text }}</span></h1>
+                        <p class="highlight">*****</p>
+                        <div class="wrap">
+                            <p>{{ product.desc }}</p>
                         </div>
                     </div>
-
-                    <form class="contact-form" @submit.prevent="makeOrder" v-if="!orderPlaced">
-                        <div class="column">
-                            <p>Name *</p>
-                            <label><input type="text" v-model="contactFields.name" required></label>
-
-                            <p>Company Name</p>
-                            <label><input type="text"></label>
-
-                            <p>Position</p>
-                            <label><input type="text"></label>
-
-                            <p>City</p>
-                            <label><input type="text"></label>
-
-                            <p>Country</p>
-                            <label><input type="text"></label>
-
-                            <p>Telephone</p>
-                            <label><input type="tel"></label>
-
-                            <p>Email *</p>
-                            <label><input type="email" v-model="contactFields.email" required></label>
+                    <div class="wrapper-img">
+                        <div class="wrap">
+                            <img :src="product.image" alt="">
                         </div>
-
-                        <div class="column">
-                            <p>You are a</p>
-                            <label>
-                                <select>
-                                    <option>seed producer</option>
-                                    <option>farmer</option>
-                                    <option>distributor</option>
-                                    <option>other</option>
-                                </select>
-                            </label>
-
-                            <p>If other, please specify</p>
-                            <label><input class="other-input" type="text"></label>
-
-                            <p>You are interested in</p>
-                            <label><textarea v-model="contactFields.message"></textarea></label>
-
-                            <p>Please type this code</p>
-                            <div class="wrap-captcha">
-                                <img src="img/contact/captcha.png" alt="captcha">
-                                <label>
-                                    <input type="text" class="small-input" required>
-                                </label>
-                                <div class="" v-if="Object.keys(cart).length > 0 && !orderPlaced">
-                                    <button type="submit" class="button" @click="submitForm">Send Message</button>
-
-                                </div>
-
+                        <button @click="cart[product.id] ? goToCart() : addToCart(product.id)">
+                            <span>{{ cartBtnText }}</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="characteristics" v-if="product.characteristics">
+                    <h3>CHARACTERISTICS</h3>
+                    <div class="wrap-ul">
+                        <ul>
+                            <li><span>Resistance</span></li>
+                            <li v-for="(item, index) in product.characteristics.resistance" :key="index">{{ item }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="characteristics" v-if="product.characteristics">
+                <div class="container">
+                    <div class="wrap">
+                        <div class="item">
+                            <h3>Plant</h3>
+                            <div class="wrap-ul">
+                                <ul>
+                                    <li v-for="(item, index) in product.characteristics.plant" :key="index">{{ item }}</li>
+                                </ul>
                             </div>
                         </div>
-                    </form>
-                    <div class="order-placed" v-if="orderPlaced">
-                        <h2>Thanks for your order!</h2>
-                        <p>Name: {{ contactFields.name }}</p>
-                        <p>Email: {{ contactFields.email }}</p>
-                        <p>Message: {{ contactFields.message }}</p>
+                        <div class="item">
+                            <h3>Cycle</h3>
+                            <div class="wrap-ul">
+                                <ul>
+                                    <li v-for="(item, index) in product.characteristics.cycle" :key="index">{{ item }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h3>Fruit</h3>
+                            <div class="wrap-ul">
+                                <ul>
+                                    <li v-for="(item, index) in product.characteristics.fruit" :key="index">{{ item }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h3>Color</h3>
+                            <div class="wrap-ul">
+                                <p>{{ product.characteristics.color }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="our-address">
-                <h1>Our Address</h1>
-                <div class="text">
-                    <p>AGRIDERA Seeds & Agriculture Ltd.</p>
-                    <p>P.O Box 103,</p>
-                    <p>Gedera 70750, Israel.</p>
-                    <p>Telephone: <span>+972 8 944 9222</span></p>
-                </div>
-            </div>
+
         </div>
     </main>
+    
     <footer>
         <div class="nav">
             <div class="menu">
@@ -213,7 +179,23 @@
     <div class="copy">
         <p>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</p>
     </div>
+
     <script>
+        const sticker = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        // Задержка чтобы Vue успел отрендерить элементы
+        setTimeout(() => {
+            document.querySelectorAll('.info .title .wrap').forEach(block => {
+                sticker.observe(block);
+            });
+        }, 500);
+
         document.addEventListener("DOMContentLoaded", function () {
             const menuBtn = document.querySelector("header .menu-btn");
             const menu = document.querySelector(".nav-phone");
