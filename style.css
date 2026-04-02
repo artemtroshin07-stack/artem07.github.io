@@ -429,8 +429,8 @@ footer ul {
 .tomato-all {
     background: url(img/t-all/bg.jpg);
     height: 602px;
-    background-size: cover; /* Заставит картинку растянуться на весь блок */
-    background-position: center; /* Поставит картинку ровно по центру */
+    background-size: cover; 
+    background-position: center; 
     background-repeat: no-repeat;
 }
 
@@ -546,7 +546,7 @@ header label {
 .tomato-hybrids .description .line {
     width: 4px;
     height: 40px;
-    background-color: #E5C100; /* Заменил красный на банановый желтый */
+    background-color: #E5C100; 
     margin-right: 20px;
     border-radius: 4px;
 }
@@ -563,8 +563,8 @@ header label {
 }
 
 .breeding-card {
-    opacity: 1; /* Было 0, делаем 1, чтобы текст был виден всегда */
-    transform: none; /* Убираем смещение вниз */
+    opacity: 1; 
+    transform: none; 
 }
 
 .breeding-card.visible {
@@ -574,12 +574,12 @@ header label {
 
 .breeding-info .container {
     display: flex;
-    background: #FFFFFF; /* Делаем фон этого блока чисто белым, чтобы он красиво контрастировал с желтым фоном страницы */
+    background: #FFFFFF; 
     padding: 58px 22px 58px 22px;
     gap: 33px;
     margin-bottom: 40px;
-    border-radius: 10px; /* Можно добавить небольшое скругление углов для красоты */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* И легкую тень, чтобы блок "парил" над желтым фоном */
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
 }
 
 .breeding-info .container .breeding-card {
@@ -641,7 +641,7 @@ header label {
 .variety-catalog .description .line {
     width: 3px;
     height: 40px;
-    background-color: #E5C100; /* Заменил красный на банановый желтый */
+    background-color: #E5C100; 
     margin-right: 20px;
     border-radius: 4px;
 }
@@ -737,7 +737,7 @@ header label {
 .content-t-one .info .wrap {
     display: flex;
     align-items: center;
-    color: #E5C100; /* Заменил красный на банановый желтый */
+    color: #E5C100; 
     font-size: 34px;
     font-weight: 700;
     gap: 31px;
@@ -879,9 +879,6 @@ tr{
     display: flex;
     gap: 10px;
     align-items: center;
-    /**font-weight: 500;**/
-    /**background: #eaeaea;**/
-    /**border-radius:  40px 10px 40px 10px;**/
     overflow: hidden;
     border: 1px solid #cccccc;
     margin-bottom: 20px;
@@ -889,7 +886,7 @@ tr{
 tbody button {
     text-align: center;
     font-size: 30px;
-    color: #E5C100; /* Заменил красный на желтый в кнопках удаления */
+    color: #E5C100; 
     background: none;
     border: none;
 }
